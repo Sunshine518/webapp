@@ -1,0 +1,43 @@
+{
+  "pages": [
+    "pages/tabs/home/index",
+    "pages/tabs/classify/index",
+    "pages/tabs/my/index",
+    "pages/login/index",
+    "pages/page/three/index",
+    "pages/page/configuration_search/index", 
+    "pages/page/configuration_detail/index"    
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "GEPC",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "selectedColor": "#f10215",
+    "color": "#999999",
+    "borderStyle": "white",
+    "list": [
+      {
+        "selectedIconPath": "assets/image/index1.png",
+        "iconPath": "assets/image/index.png",
+        "pagePath": "pages/tabs/home/index",
+        "text": "首页"
+      },
+      {
+        "selectedIconPath": "assets/image/classify.png",
+        "iconPath": "assets/image/classify1.png",
+        "pagePath": "pages/tabs/classify/index",
+        "text": "分类"
+      },
+      {
+        "selectedIconPath": "assets/image/my1.png",
+        "iconPath": "assets/image/my.png",
+        "pagePath": "pages/tabs/my/index",
+        "text": "我的"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json"
+}

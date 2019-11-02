@@ -1,0 +1,11 @@
+<view class="container">
+  <view class='login-box'>
+    <view class="line">
+    <view class='box'>
+      <input class='login-input' placeholder='请输入账号' placeholder-class='login-input-placeholder' type="text"  bindinput='onInputChange' data-type='username'/>
+      <input class="login-input" placeholder='请输入密码' placeholder-class='login-input-placeholder' type='password' bindinput='onInputChange' data-type='password'/>
+      <button type="primary" class="login-input" bindtap="onLogin">登录</button>
+      </view>
+    </view>
+  </view>
+</view>
