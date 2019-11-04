@@ -1,18 +1,24 @@
 const json = require('../../../utils/ajax.js')
 const regeneratorRuntime = require('../../../utils/runtime')
 const {
-  AESEncrypt
+  AESEncrypt,
+  objToQuerystring,
+  objToSearchObj
 } = require('../../../utils/util.js')
 
 Page({
 
   data: {
     showSide: false,
-    list: [],//一级目录列表 
+    vin: '',
+    list: [], //一级目录列表 
+    level1Title: '', //一级目录名称
     key2: 999,
     key: 999,
     key1: 999,
-    classify: [] //二级目录列表 
+    classify: [], //二级目录列表 
+    level2Title: '', //二级目录名称
+    level3: [] //三级目录列表 
   },
 
 
@@ -35,25 +41,22 @@ Page({
     const res = await json.get(`/onestep/base/epc/epc/SparePartsFrontDesk/queryAllCatalogsForLV1?search.vin=${vin}`)
     const list = Array.isArray(res) ? res : []
     this.setData({
+      vin: vin,
       list: list
     })
-    console.log(this.data.list)
+    this.onSpace()
   },
 
-  // 获取二级目录
-  async getCategory(e) {
-    const id = e.currentTarget.dataset.id
-    const carseriesid = e.currentTarget.dataset.carseriesid
-
-  },
-
+  // 获取二级目录。点击选择配置，通过动画属性展示二级目录
   async onSpace(e) {
-    const id = e.currentTarget.dataset.id
-    const carseriesid = e.currentTarget.dataset.carseriesid
+    const id = e ? e.currentTarget.dataset.id : this.data.list[0].id
+    const carseriesid = e ? e.currentTarget.dataset.carseriesid : this.data.list[0].carseriesId
+    const itemname = e ? e.currentTarget.dataset.itemname : this.data.list[0].name
     const res = await json.get(`/onestep/base/epc/epc/SparePartsFrontDesk/queryAllCatalogsForLV2?carseries=${carseriesid}&catalogLV1=${id}`)
-    const classify = res
+    const classify = Array.isArray(res) ? res : []
     this.setData({
-      classify: classify
+      classify: classify,
+      level1Title: itemname
     })
     let animation = wx.createAnimation({
       duration: 200,
@@ -61,9 +64,7 @@ Page({
       delay: 0
     })
     this.animation = animation
-    console.log(e.currentTarget.dataset.index)
-    console.log('this.data.key2',this.data.key2)
-    if (e.currentTarget.dataset.index != this.data.key2) {
+    if (e && e.currentTarget.dataset.index != this.data.key2) {
       this.setData({
         key2: e.currentTarget.dataset.index,
       })
@@ -71,7 +72,7 @@ Page({
       if (String(num).indexOf(".") > -1) {
         num = num + 0.5
       }
-      animation.height(num*28).step()
+      animation.height(num * 30).step()
       this.setData({
         animationData: animation.export()
       })
@@ -88,6 +89,25 @@ Page({
         animationData1: animation.export(),
       })
     }
+    this.onGetLevel3()
   },
+
+  // 三级目录
+  async onGetLevel3(e) {
+    console.log(this.data.classify)
+    const carseriesid = e ? e.currentTarget.dataset.carseriesid : this.data.classify[0].carseriesId
+    const path = e ? e.currentTarget.dataset.path : this.data.classify[0].path
+    const itemname = e ? e.currentTarget.dataset.itemname : this.data.classify[0].name
+    let search = {}
+    search.carseriesId = carseriesid
+    search.vin = this.data.vin
+    search.path = `/${path.split('/')[1]}`
+    const res = await json.get(`/onestep/base/epc/epc/SparePartsFrontDesk/queryAllLV3CatalogPhotoForIndexOne?${objToQuerystring(objToSearchObj(search))}`)
+    const level3 = Array.isArray(res) ? res : []
+    this.setData({
+      level3: level3,
+      level2Title: itemname
+    })
+  }
 
 })

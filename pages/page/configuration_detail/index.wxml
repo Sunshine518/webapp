@@ -1,28 +1,39 @@
-<view class='tet'>
-  <view class='tet_text'>
-    <text style='font-size:40rpx;font-weight:bold;'>零件展示</text>
-    <view class='tet_text_category'>
-      <view class='category_btn' catchtap='onCategory'>请选择配置</view>
-    </view>
-    <!-- 零件展示弧度效果 -->
-    <view class='circular_bead'>
-      <view style='position: absolute;bottom: 0; background: #fff;height: 30rpx;border-radius: 30rpx 30rpx 0 0;width: 100%;'></view>
-    </view>
+<view class='tet_text'>
+  <text style='font-size:40rpx;font-weight:bold;'>零件展示</text>
+  <view class='category_btn' catchtap='onCategory'>请选择配置</view>
+  <!-- 零件展示弧度效果 -->
+  <view class='circular_bead'>
+    <view style='position: absolute;bottom: 0; background: #fff;height: 30rpx;border-radius: 30rpx 30rpx 0 0;width: 100%;'></view>
   </view>
 </view>
+<!-- 当前所在目录 -->
+<view class="title">
+  <text class="level-title">{{level1Title}}</text>
+  <text class="level-title level2">{{level2Title}}</text>
+</view>
+<!-- 图片盒子列表 -->
+<view class='image_list'>
+  <view class='image-box' wx:for="{{level3}}" bindtap='onLink' data-id='{{item.id}}' wx:key="{{item.id}}">
+    <image src="{{item.picture}}"></image>
+    <view class='font'>{{item.figureNo}} {{item.groupName}}</view>
+  </view>
+</view>
+
+
 
 <!-- 侧边弹出栏 -->
 <view bindtap="showSide" class="{{showSide === true ? 'cover' : ''}}"></view>
 <view class="main {{showSide === true ? 'show-side' : 'hidden-side'}}">
   <view class='main_left'>
     <scroll-view scroll-y="true" class='styleScroll'>
-      <view wx:for="{{list}}" wx:key='index' class="{{key2==index?'onChecked':'fold_all'}}" animation="{{key2==index? animationData:animationData1}}" bindtap='onSpace' wx:for-index="index" data-index='{{index}}' data-id="{{item.id}}" data-carseriesid="{{item.carseriesId}}">
+      <view wx:for="{{list}}" wx:key='index' class="{{key2==index?'onChecked':'fold_all'}}" animation="{{key2==index? animationData:animationData1}}" bindtap='onSpace' wx:for-index="index" data-index='{{index}}' data-id="{{item.id}}" data-carseriesid="{{item.carseriesId}}"
+        data-itemname="{{item.name}}">
         <view class='level1'>
           <view class="fold">{{item.name}}</view>
           <view class="{{key2==index?'triangle_border_up1':'triangle1'}}"></view>
         </view>
         <view class='gategories' wx:if='{{key2==index}}'>
-          <view class="{{items.id == key? 'gategories_style1':'gategories_style'}}" wx:for='{{classify}}' wx:for-item="items" wx:key='index' catchtap='onCategories' wx:for-index="index" data-id="{{items.id}}">{{items.code}}-{{items.name}}</view>
+          <view class="{{items.id == key? 'gategories_style1':'gategories_style'}}" wx:for='{{classify}}' wx:for-item="items" wx:key='index' bindtap='onGetLevel3' wx:for-index="index" data-carseriesId="{{items.carseriesId}}" data-path="{{items.path}}" data-itemname="{{items.name}}">{{items.code}}-{{items.name}}</view>
         </view>
       </view>
     </scroll-view>
