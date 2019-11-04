@@ -51,6 +51,10 @@
   height: 120rpx;
 }
 
+.bg_hover {
+  transform: scale(0.9, 0.9);
+}
+
 /* 新闻公告 */
 .news-box {
   display: flex;

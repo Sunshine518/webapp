@@ -29,7 +29,42 @@ const AESEncrypt = (data, key) => {
   return CryptoJS.enc.Base64.stringify(encrypted.ciphertext);
 }
 
+function isObject(obj) {
+  return Object.prototype.toString.call(obj) === "[object Object]"
+}
+
+
+/**
+ * 将对象转换为请求字符串  {a:1,b:2} => a=1&b=2
+ */
+const objToQuerystring = (obj) => {
+  if (!isObject(obj)) {
+    return
+  }
+  let querystring = ''
+  for (let [key, value] of Object.entries(obj)) {
+    querystring += `&${key}=${value}`
+  }
+  return querystring.substring(1)
+}
+
+/**
+ * 将对象的属性添加search，后台需要  {a:1}=>{['search.a']:1}
+ */
+const objToSearchObj = (obj) => {
+  if (!isObject(obj)) {
+    return
+  }
+  let searchObj = {}
+  for (let [key, value] of Object.entries(obj)) {
+    searchObj[`search.${key}`] = value
+  }
+  return searchObj
+}
+
 module.exports = {
   formatTime,
   AESEncrypt,
+  objToSearchObj,
+  objToQuerystring
 }

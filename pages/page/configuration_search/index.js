@@ -1,10 +1,11 @@
 const regeneratorRuntime = require('../../../utils/runtime')
 const json = require('../../../utils/ajax.js')
+const { objToSearchObj, objToQuerystring } = require('../../../utils/util.js')
 
 Page({
 
   data: {
-    searchValue: ''
+    searchValue: 'L6T7844S9KN000239'
   },
 
   onInputChange(e) {
@@ -27,9 +28,9 @@ Page({
         icon: 'none'
       })
       return
-    }else{
-      wx.redirectTo({
-        url: '/pages/page/configuration_detail/index'
+    } else{
+      wx.navigateTo({
+        url: `/pages/page/configuration_detail/index?vin=${this.data.searchValue}`
       })
     }
   }

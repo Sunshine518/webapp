@@ -1,0 +1,17 @@
+<view class='containar'>
+  <view class="left-item-box">
+    <view class="left-item" wx:for='{{list}}' wx:key='{{index}}' bindtap='onCategory' data-id='{{item.id}}' data-carseriesid='{{item.carseriesId}}'>
+      <view class="left-item-text1">{{item.name}}</view>
+    </view>
+  </view>
+  <scroll-view scroll-y="true" class='styleScroll'>
+    <view class='right' style="margin-left: 26rpx;">
+      <view class='sort'>
+        <view class="pic">
+          <image src="../../../assets/nineimg/fadongji.jpg"></image>
+        </view>
+        <view>发动机</view>
+      </view>
+    </view>
+  </scroll-view>
+</view>

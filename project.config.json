@@ -82,6 +82,12 @@
 					"pathName": "pages/page/configuration_search/index",
 					"query": "",
 					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "配置查询分类",
+					"pathName": "pages/page/configuration_detail/index",
+					"scene": null
 				}
 			]
 		}
