@@ -117,7 +117,7 @@
   width: 100%;
   height: 100%;
   position: fixed;
-  left: 170rpx;
+  left: 320rpx;
   top: 0;
   background-color: #fff;
   z-index: 999999999;
@@ -142,7 +142,7 @@
 }
 
 .cover {
-  width: 22.5%;
+  width: 45%;
   height: 100%;
   position: fixed;
   z-index: 19999999;
@@ -204,7 +204,7 @@
 }
 
 .styleScroll {
-  height: 90vh;
+  height: 50vh;
 }
 
 ::-webkit-scrollbar {
@@ -255,3 +255,9 @@
   justify-content: space-between;
   align-items: center;
 }
+
+.classfify-style{
+  margin-bottom: 30rpx;
+}
+
+

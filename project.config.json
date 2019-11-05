@@ -7,7 +7,7 @@
 		"urlCheck": false,
 		"es6": true,
 		"postcss": true,
-		"minified": true,
+		"minified": false,
 		"newFeature": true,
 		"coverView": true,
 		"nodeModules": true,
@@ -87,6 +87,13 @@
 					"id": -1,
 					"name": "配置查询分类",
 					"pathName": "pages/page/configuration_detail/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "图片及备件详情",
+					"pathName": "pages/page/configuration_image/index",
 					"scene": null
 				}
 			]

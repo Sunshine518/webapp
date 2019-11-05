@@ -18,9 +18,16 @@ Page({
     key1: 999,
     classify: [], //二级目录列表 
     level2Title: '', //二级目录名称
-    level3: [] //三级目录列表 
+    level3: [], //三级目录列表 
+    catalogId: '',
+    activeName: '1'
   },
 
+  onChange(event) {
+    this.setData({
+      activeName: event.detail
+    });
+  },
 
   // 显示侧边弹出
   onCategory() {
@@ -58,43 +65,16 @@ Page({
       classify: classify,
       level1Title: itemname
     })
-    let animation = wx.createAnimation({
-      duration: 200,
-      timingFunction: "linear",
-      delay: 0
-    })
-    this.animation = animation
-    if (e && e.currentTarget.dataset.index != this.data.key2) {
-      this.setData({
-        key2: e.currentTarget.dataset.index,
-      })
-      let num = classify.length
-      if (String(num).indexOf(".") > -1) {
-        num = num + 0.5
-      }
-      animation.height(num * 30).step()
-      this.setData({
-        animationData: animation.export()
-      })
-      animation.height(20).step()
-      this.setData({
-        animationData1: animation.export(),
-      })
-    } else {
-      this.setData({
-        key2: 999
-      })
-      animation.height(20).step()
-      this.setData({
-        animationData1: animation.export(),
-      })
+    if (!e) {
+      this.onGetLevel3()
     }
-    this.onGetLevel3()
   },
 
   // 三级目录
   async onGetLevel3(e) {
-    console.log(this.data.classify)
+    this.setData({
+      catalogId: e ? e.currentTarget.dataset.catalogid : '3befc935-61e1-4a2e-b63f-944e9bec54f9'
+    })
     const carseriesid = e ? e.currentTarget.dataset.carseriesid : this.data.classify[0].carseriesId
     const path = e ? e.currentTarget.dataset.path : this.data.classify[0].path
     const itemname = e ? e.currentTarget.dataset.itemname : this.data.classify[0].name
@@ -108,6 +88,12 @@ Page({
       level3: level3,
       level2Title: itemname
     })
-  }
+  },
 
+  // 点击图片跳转到图片显示详情
+  onGetLevel4() {
+    wx.navigateTo({
+      url: `/pages/page/configuration_image/index?catalogId=${this.data.catalogId}&vin=${this.data.vin}`
+    })
+  }
 })

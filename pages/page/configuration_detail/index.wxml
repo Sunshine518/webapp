@@ -13,7 +13,7 @@
 </view>
 <!-- 图片盒子列表 -->
 <view class='image_list'>
-  <view class='image-box' wx:for="{{level3}}" bindtap='onLink' data-id='{{item.id}}' wx:key="{{item.id}}">
+  <view class='image-box' wx:for="{{level3}}" bindtap='onGetLevel4' data-id='{{item.id}}' wx:key="{{item.id}}">
     <image src="{{item.picture}}"></image>
     <view class='font'>{{item.figureNo}} {{item.groupName}}</view>
   </view>
@@ -24,18 +24,12 @@
 <!-- 侧边弹出栏 -->
 <view bindtap="showSide" class="{{showSide === true ? 'cover' : ''}}"></view>
 <view class="main {{showSide === true ? 'show-side' : 'hidden-side'}}">
-  <view class='main_left'>
-    <scroll-view scroll-y="true" class='styleScroll'>
-      <view wx:for="{{list}}" wx:key='index' class="{{key2==index?'onChecked':'fold_all'}}" animation="{{key2==index? animationData:animationData1}}" bindtap='onSpace' wx:for-index="index" data-index='{{index}}' data-id="{{item.id}}" data-carseriesid="{{item.carseriesId}}"
-        data-itemname="{{item.name}}">
-        <view class='level1'>
-          <view class="fold">{{item.name}}</view>
-          <view class="{{key2==index?'triangle_border_up1':'triangle1'}}"></view>
-        </view>
-        <view class='gategories' wx:if='{{key2==index}}'>
-          <view class="{{items.id == key? 'gategories_style1':'gategories_style'}}" wx:for='{{classify}}' wx:for-item="items" wx:key='index' bindtap='onGetLevel3' wx:for-index="index" data-carseriesId="{{items.carseriesId}}" data-path="{{items.path}}" data-itemname="{{items.name}}">{{items.code}}-{{items.name}}</view>
-        </view>
-      </view>
-    </scroll-view>
-  </view>
+  <van-collapse value="{{ activeName }}" bind:change="onChange" accordion>
+    <van-collapse-item wx:for="{{list}}" title="{{item.name}}" name="{{item.id}}" wx:key="{{item.id}}" bindtap='onSpace' data-id="{{item.id}}" data-carseriesid="{{item.carseriesId}}" data-itemname="{{item.name}}">
+     <scroll-view scroll-y="true" class='styleScroll'>
+
+      <view wx:for="{{classify}}" wx:key="{{item.id}}" data-carseriesId="{{item.carseriesId}}" data-path="{{item.path}}" data-itemname="{{item.name}}" data-catalogId="{{item.id}}" bindtap='onGetLevel3' class="classfify-style {{item.id === catalogId ? 'gategories_style1':'gategories_style'}}" >{{item.code}}-{{item.name}}</view>
+        </scroll-view>
+    </van-collapse-item>
+  </van-collapse>
 </view>

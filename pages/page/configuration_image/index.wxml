@@ -1,0 +1,24 @@
+<view>
+  <van-tabs color="#1790FF" bindchange="onChange">
+    <van-tab title="零件图" title-style="font-size:30rpx;">
+      <view class="content-box">
+        <image src="{{imageObj.imgUrl}}" class="part-img" mode="aspectFit"></image>
+      </view>
+    </van-tab>
+    <van-tab title="图片详情" title-style="font-size:30rpx;">
+      <view class="content-box" style="background:#f6f6f6">
+        <view class="part-item-box">
+          <view class="info-box">
+            <view class="right">
+              <view>物料号：{{partList.materialCode}}</view>
+              <view>备件编号：{{partList.sparepNo}}</view>
+              <view>备件名称：{{partList.sparepName}}</view>
+              <view>数量：{{partList.epcCount}}</view>
+              <view>备注：{{partList.remarks}}</view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </van-tab>
+  </van-tabs>
+</view>

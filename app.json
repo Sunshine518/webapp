@@ -6,7 +6,8 @@
     "pages/login/index",
     "pages/page/three/index",
     "pages/page/configuration_search/index", 
-    "pages/page/configuration_detail/index"    
+    "pages/page/configuration_detail/index",
+    "pages/page/configuration_image/index"
   ],
   "window": {
     "backgroundTextStyle": "light",

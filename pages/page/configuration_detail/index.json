@@ -1,3 +1,7 @@
 {
-  "navigationBarTitleText": "查看配置"
+  "navigationBarTitleText": "查看配置",
+    "usingComponents": {
+      "van-collapse": "/assets/dist/vant/collapse/index",
+      "van-collapse-item": "/assets/dist/vant/collapse-item/index"
+    }
 }

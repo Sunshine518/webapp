@@ -1,10 +1,9 @@
   <view class='header-box'>
     <view class='input-box'>
       <input class='search-input' value='{{searchValue}}' placeholder='请输入VIN码' placeholder-style="color:#D6D6D6" bindinput="onInputChange"></input>
-     <icon type="clear" size="15" bindtap='onClear' wx:if="{{searchValue}}"/>
-      <icon type="search" size="20" color="#10aeff" class="search" bindtap='onSearch'/>
+     <icon type="clear" size="15" class="search" bindtap='onClear' wx:if="{{searchValue}}"/>
     </view>
   </view>
   <view class='title'>原厂配件精准定位</view>
   <view class='sub-title'>齐全、准确、及时</view>
-  <navigator class='search-btn' hover-class="none" url='/pages/others/select-brand/select-brand'>按VIN码查询车系配置</navigator>
+  <navigator class='search-btn' hover-class="none" url='/pages/others/select-brand/select-brand' bindtap='onSearch'>按VIN码查询车系配置</navigator>
