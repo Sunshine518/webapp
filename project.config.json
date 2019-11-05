@@ -94,6 +94,20 @@
 					"id": -1,
 					"name": "图片及备件详情",
 					"pathName": "pages/page/configuration_image/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "答疑中心",
+					"pathName": "pages/page/answer_center/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "我的",
+					"pathName": "pages/tabs/my/index",
 					"scene": null
 				}
 			]

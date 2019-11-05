@@ -1,66 +1,52 @@
-// pages/my/my.js
+
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    SDKVersion: '',
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    wx.getSystemInfo({
+      success: (res) => {
+        console.log(res.SDKVersion)
+        this.setData({
+          SDKVersion: res.SDKVersion
+        })
+      }
+    })
   },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
+  calling: function () {
+    wx.makePhoneCall({
+      phoneNumber: '15802758882',
+    })
   },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
+  getLocation: function () {
+    wx.openLocation({
+      latitude: 30.492685,
+      longitude: 114.160942,
+      name: "武汉市蔡甸区立业路16号(东北方向20米)",
+      address: "武汉市蔡甸区立业路16号(东北方向20米)",
+      scale: 28
+    })
   },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
+  onShareAppMessage(res) {
+    return {
+      title: '电子备件目录',
+      path: 'pages/others/start/start'
+    }
   },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
+  async onLogout() {
+    const res = await json.get('/logout')
+    wx.removeStorageSync('token')
+    wx.navigateTo({
+      url: '/pages/others/login/login',
+    })
   }
+
 })

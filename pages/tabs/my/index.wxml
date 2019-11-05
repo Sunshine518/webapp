@@ -1,2 +1,24 @@
-<!--pages/my/my.wxml-->
-<text>pages/my/my.wxml</text>
+<view class="page-phone">
+  <view class='header-box'>
+    <view class="main-box">
+      <view class='title'>公司简介</view>
+      <text decode="true">
+      &emsp;&emsp;武汉宏承天佑汽车技术服务有限公司于2012年10月11日成立。法定代表人关旭,公司经营范围包括：汽车饰品、包装材料、汽车零部件、汽车维修设备及工位器具、电动车（非汽车类）的设计、开发及销售；汽车技术资料的编制及咨询服务；汽车零件平面及立体设计、制作；计算机系统软件的开发及维护；计算机网络技术服务；汽车领域内技术咨询、技术服务、技术开发和技术转让（不含汽车维修）；汽车商务咨询服务；电子产品的安装、销售等。
+    </text>
+    </view>
+  </view>
+  <view class="content">
+    <view class="wx-cell" bindtap="getLocation">
+      武汉经济技术开发区立业路16号财富广场
+    </view>
+    <view class="wx-cell" bindtap='onShareAppMessage'>
+      分享给朋友
+    </view>
+    <view class="wx-cell" bindtap="calling">
+      合作意向 - 15802758882
+    </view>
+  </view>
+  <view class='login-out' bindtap='onLogout'>
+      退出登录
+    </view>
+</view>

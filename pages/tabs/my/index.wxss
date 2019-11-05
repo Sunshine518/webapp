@@ -1,1 +1,45 @@
-/* pages/my/my.wxss */
+/**about.wxss**/
+
+.page-phone {
+  font-family: '微软雅黑';
+  background: #fff;
+  display: flex;
+  flex-direction: column
+}
+
+.header-box {
+
+}
+
+.main-box{
+  font-size: 28rpx;
+  line-height: 60rpx;
+  padding: 15rpx;
+  margin: 20rpx;
+}
+
+.main-box .title{
+  font-size: 35rpx;
+  text-align:center; 
+  margin-bottom: -50rpx;
+}
+
+
+.content {
+  padding: 41rpx 41rpx 10rpx 41rpx;
+  border-top: 1rpx #eee solid;
+  border-bottom: 1rpx #eee solid;
+  display: flex;
+  flex-direction: column
+}
+
+
+.wx-cell {
+  margin-bottom: 46rpx;
+  margin-left: 60rpx;
+  position: relative;
+}
+
+.login-out{
+  text-align: center
+}

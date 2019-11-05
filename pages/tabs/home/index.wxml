@@ -31,16 +31,16 @@
         <text>3D展示</text>
       </view>
     </navigator>
-    <navigator url="../" hover-class='none'>
+    <navigator url="../../page/answer_center/index"  hover-class='none'>
      <view hover-class="bg_hover">
         <image src='../../../assets/image/3.png'></image>
         <text>答疑中心</text>
       </view>
     </navigator>
-    <navigator url="../" hover-class='none'>
+    <navigator url="../../page/chat/index"  hover-class='none'>
      <view hover-class="bg_hover">
         <image src='../../../assets/image/2.png'></image>
-        <text>购物车</text>
+        <text>聊天对话</text>
       </view>
     </navigator>
   </view>

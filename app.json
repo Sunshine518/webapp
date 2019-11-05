@@ -7,7 +7,10 @@
     "pages/page/three/index",
     "pages/page/configuration_search/index", 
     "pages/page/configuration_detail/index",
-    "pages/page/configuration_image/index"
+    "pages/page/configuration_image/index",
+    "pages/page/answer_center/index",
+    "pages/page/answer_center_submit/index",
+    "pages/page/chat/index"
   ],
   "window": {
     "backgroundTextStyle": "light",
