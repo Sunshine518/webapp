@@ -3,16 +3,16 @@
   <view class="swiper-view">
     <swiper class="swiper" indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" circular="{{circular}}">
       <swiper-item item-id="banner1">
-        <image src="../../../assets/image/banner1.jpg" mode="aspectFill" />
+        <image src="http://yqbb5eb8e32.pic34.websiteonline.cn/upload/banner4.jpg" mode="aspectFill" />
       </swiper-item>
       <swiper-item item-id="banner2">
-        <image src="../../../assets/image/banner2.jpg" mode="aspectFill" />
+        <image src="http://yqbb5eb8e32.pic34.websiteonline.cn/upload/banner3.jpg" mode="aspectFill" />
       </swiper-item>
       <swiper-item item-id="banner3">
-        <image src="../../../assets/image/banner3.jpg" mode="aspectFill" />
+        <image src="http://yqbb5eb8e32.pic34.websiteonline.cn/upload/banner6.jpg" mode="aspectFill" />
       </swiper-item>
       <swiper-item item-id="banner4">
-        <image src="../../../assets/image/banner4.jpg" mode="aspectFill" />
+        <image src="http://yqbb5eb8e32.pic34.websiteonline.cn/upload/banner.jpg" mode="aspectFill" />
       </swiper-item>
     </swiper>
   </view>

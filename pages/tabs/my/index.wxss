@@ -1,45 +1,110 @@
 /**about.wxss**/
+@import "../../../assets/icon/iconfont.wxss";
 
-.page-phone {
+.page {
   font-family: '微软雅黑';
   background: #fff;
   display: flex;
-  flex-direction: column
+  flex-direction: column;
+  width: 100vw;
+  height: 100vh
+}
+
+.title {
+  color: #f8fbfe;
+  font-size: 42rpx;
+  width: 180rpx;
+  height: 60rpx;
+  background: #2f7ad5;
+  position: absolute;
+  top: 90rpx;
+  left: 38%;
+  z-index: 9999;
+}
+
+.title1 {
+  color: #f8fbfe;
+  font-size: 30rpx;
+  height: 60rpx;
+  width: 100%;
+  position: absolute;
+  top:200rpx;
+  left: 10%;
+  z-index: 9999;
 }
 
 .header-box {
-
-}
-
-.main-box{
-  font-size: 28rpx;
-  line-height: 60rpx;
-  padding: 15rpx;
-  margin: 20rpx;
-}
-
-.main-box .title{
-  font-size: 35rpx;
-  text-align:center; 
-  margin-bottom: -50rpx;
-}
-
-
-.content {
-  padding: 41rpx 41rpx 10rpx 41rpx;
-  border-top: 1rpx #eee solid;
-  border-bottom: 1rpx #eee solid;
-  display: flex;
-  flex-direction: column
-}
-
-
-.wx-cell {
-  margin-bottom: 46rpx;
-  margin-left: 60rpx;
+  height: 380rpx;
+  width: 100%;
+  background-image: url(data:image/png;base64,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);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
   position: relative;
 }
 
-.login-out{
-  text-align: center
+.content-box {
+  color: #979797;
+  font-family: PingFangSC-Regular;
+  letter-spacing: 0.5px;
+  line-height: 1.5;
+  font-size: 24rpx;
+  padding: 20rpx;
+  background-color: #fff;
+}
+
+.content {
+  margin-top: 15rpx;
+  padding: 41rpx 41rpx 10rpx 41rpx;
+  display: flex;
+  flex-direction: column;
+}
+
+.wx-cell {
+  margin-bottom: 30rpx;
+  margin-left: 16rpx;
+  position: relative;
+  display: flex;
+}
+
+/* 覆盖按钮默认样式 */
+
+.btn {
+  height: 100%;
+  width: 100%;
+  border: none;
+  border-radius: 0;
+  padding: 0;
+  margin: 0;
+  font-size: 1em;
+  position: static;
+  /* color: rgba(0, 0, 0, 0.65); */
+  text-align: left;
+  background: #fff;
+}
+
+.btn::after {
+  content: none;
+}
+
+.login-out {
+  margin-top: 20rpx;
+  text-align: center;
+  background-color: #2f7ad5;
+  padding: 25rpx;
+  margin: 20rpx;
+  border-radius: 20rpx;
+  color: #fff;
+  font-size: 34rpx;
+  letter-spacing: 2rpx;
+}
+
+.icon {
+  font-size: 45rpx;
+  margin-top: 15rpx;
+  margin-right: 15rpx;
+}
+
+.icon1 {
+  font-size: 45rpx;
+  margin-right: 15rpx;
 }

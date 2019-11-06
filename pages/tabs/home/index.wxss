@@ -1,3 +1,5 @@
+@import "../../../assets/icon/iconfont.wxss";
+
 /* 轮播图 */
 .swiper-view{
   display: flex;

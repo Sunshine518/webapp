@@ -1,3 +1,5 @@
+const regeneratorRuntime = require('../../../utils/runtime')
+const json = require('../../../utils/ajax.js')
 
 Page({
 
@@ -8,25 +10,16 @@ Page({
     SDKVersion: '',
   },
 
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
-    wx.getSystemInfo({
-      success: (res) => {
-        console.log(res.SDKVersion)
-        this.setData({
-          SDKVersion: res.SDKVersion
-        })
-      }
-    })
-  },
-  calling: function () {
+
+  // 拨打电话
+  calling () {
     wx.makePhoneCall({
       phoneNumber: '15802758882',
     })
   },
-  getLocation: function () {
+
+  // 使用微信内置地图查看位置
+  getLocation () {
     wx.openLocation({
       latitude: 30.492685,
       longitude: 114.160942,
@@ -35,6 +28,7 @@ Page({
       scale: 28
     })
   },
+
   onShareAppMessage(res) {
     return {
       title: '电子备件目录',
@@ -42,10 +36,9 @@ Page({
     }
   },
   async onLogout() {
-    const res = await json.get('/logout')
-    wx.removeStorageSync('token')
+    wx.removeStorageSync("token")
     wx.navigateTo({
-      url: '/pages/others/login/login',
+      url: '/pages/login/index',
     })
   }
 
