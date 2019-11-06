@@ -3,14 +3,21 @@
     "pages/tabs/home/index",
     "pages/tabs/classify/index",
     "pages/tabs/my/index",
-    "pages/login/index",
-    "pages/page/three/index",
-    "pages/page/configuration_search/index", 
-    "pages/page/configuration_detail/index",
-    "pages/page/configuration_image/index",
-    "pages/page/answer_center/index",
-    "pages/page/answer_center_submit/index",
-    "pages/page/chat/index"
+    "pages/login/index"
+  ],
+  "subPackages": [
+    {
+      "root": "pages/page/",
+      "pages": [
+      "three/index",
+      "configuration_search/index",
+      "configuration_detail/index",
+      "configuration_image/index",
+      "answer_center/index",
+      "answer_center_submit/index",
+      "3d/index"
+      ]
+    }
   ],
   "window": {
     "backgroundTextStyle": "light",

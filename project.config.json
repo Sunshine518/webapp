@@ -108,6 +108,13 @@
 					"id": -1,
 					"name": "我的",
 					"pathName": "pages/tabs/my/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "3d",
+					"pathName": "pages/page/3d/index",
 					"scene": null
 				}
 			]
