@@ -62,6 +62,18 @@ const objToSearchObj = (obj) => {
   return searchObj
 }
 
+function getReplyList(children, list, commented) {
+  if (!Array.isArray(children)) {
+    return
+  }
+  children.forEach(item => {
+    const obj = { ...item, commented: commented }
+    list.push(obj)
+    getReplyList(item.children, list, item.senderUserName)
+  })
+}
+
+
 /**
  * 部署格式化日期工具
  * @param date
@@ -91,5 +103,6 @@ module.exports = {
   AESEncrypt,
   objToSearchObj,
   objToQuerystring,
-  timeFormat
+  timeFormat,
+  getReplyList
 }

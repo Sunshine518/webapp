@@ -39,7 +39,17 @@
   <navigator url="../" hover-class='none'>
     <view hover-class="bg_hover">
       <image src='../../../assets/image/2.png'></image>
-      <text>聊天对话</text>
+      <text>其他</text>
     </view>
   </navigator>
+</view>
+
+  
+<view class='product_list'>
+  <view class='commodity' wx:for="{{carList}}" wx:key="index">
+    <view data-carseriesId="{{item.carseriesId}}" data-carseriesName="{{item.carseriesName}}" bindtap="onDetail">
+      <image src='{{item.carseriesImage}}'></image>
+      <view class='font'>{{item.carseriesName}}</view>
+    </view>
+  </view>
 </view>

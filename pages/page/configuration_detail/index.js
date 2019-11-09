@@ -13,14 +13,12 @@ Page({
     vin: '',
     list: [], //一级目录列表 
     level1Title: '', //一级目录名称
-    key2: 999,
-    key: 999,
-    key1: 999,
     classify: [], //二级目录列表 
     level2Title: '', //二级目录名称
     level3: [], //三级目录列表 
     catalogId: '',
-    activeName: '1'
+    activeName: '1',
+    searchObj:{} //保存当前接收到的参数 
   },
 
   onChange(event) {
@@ -44,12 +42,13 @@ Page({
 
   // 获取9大类
   async onLoad(query) {
-    const vin = query.vin ? query.vin : 'L6T7844S9KN000239'
-    const res = await json.get(`/onestep/base/epc/epc/SparePartsFrontDesk/queryAllCatalogsForLV1?search.vin=${vin}`)
-    const list = Array.isArray(res) ? res : []
+    // console.log(objToQuerystring(objToSearchObj(query)),555)
+    // const vin = query.vin ? query.vin : 'L6T7844S9KN000239'
+    const search = objToQuerystring(objToSearchObj(query))
+    const res = await json.get(`/onestep/base/epc/epc/SparePartsFrontDesk/queryAllCatalogsForLV1?${search}`, )
     this.setData({
-      vin: vin,
-      list: list
+      list: Array.isArray(res) ? res : [],
+      searchObj : query
     })
     this.onSpace()
   },

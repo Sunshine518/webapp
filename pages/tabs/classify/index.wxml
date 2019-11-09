@@ -1,7 +1,0 @@
-<view class='all'>
-  <view class='left'>
-    <view class="{{num==index?'category':'category1'}}" wx:for='{{icon}}' wx:key='{{index}}' data-num='{{index}}' data-id='{{item.id}}' bindtap='onCategory'>
-      <view>{{item.className}}</view>
-    </view>
-  </view>
-</view>
