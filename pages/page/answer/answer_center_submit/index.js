@@ -1,6 +1,6 @@
-const regeneratorRuntime = require('../../../utils/runtime')
-const json = require('../../../utils/ajax.js');
-const WxParse = require('../../../wxParse/wxParse.js');
+const regeneratorRuntime = require('../../../../utils/runtime')
+const json = require('../../../../utils/ajax.js');
+const WxParse = require('../wxParse/wxParse.js');
 
 Page({
 

@@ -1,8 +1,8 @@
-<import src="../../../wxParse/wxParse.wxml"/>
+<import src="../wxParse/wxParse.wxml"/>
 <view class='wrap'>
     <view class='header'>
         <view class='header-icon {{type=="album"?"square":""}}'>
-            <image src='../3d/tp.jpg'></image>
+            <image src='../tp.jpg'></image>
         </view>
         <view class='header-text'>
             <text>当前用户</text>

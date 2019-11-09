@@ -1,6 +1,6 @@
-const regeneratorRuntime = require('../../../utils/runtime')
-const json = require('../../../utils/ajax.js')
-const { objToSearchObj, objToQuerystring } = require('../../../utils/util.js')
+const regeneratorRuntime = require('../../../../utils/runtime')
+const json = require('../../../../utils/ajax.js')
+const { objToSearchObj, objToQuerystring } = require('../../../../utils/util.js')
 
 Page({
 
@@ -30,7 +30,7 @@ Page({
       return
     } else{
       wx.navigateTo({
-        url: `/pages/page/configuration_detail/index?vin=${this.data.searchValue}`
+        url: `/pages/page/configuration/configuration_detail/index?vin=${this.data.searchValue}`
       })
     }
   }

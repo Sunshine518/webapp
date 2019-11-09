@@ -1,9 +1,9 @@
-const json = require('../../../utils/ajax.js')
-const regeneratorRuntime = require('../../../utils/runtime')
+const json = require('../../../../utils/ajax.js')
+const regeneratorRuntime = require('../../../../utils/runtime')
 const {
   objToQuerystring,
   objToSearchObj
-} = require('../../../utils/util.js')
+} = require('../../../../utils/util.js')
 
 Page({
 

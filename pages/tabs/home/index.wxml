@@ -16,21 +16,22 @@
   </swiper>
 </view>
 
+
 <!-- 系统导航 -->
 <view class='system-navigation-list'>
-  <navigator url="../../page/configuration_search/index" hover-class='none'>
+  <navigator url="../../page/configuration/configuration_search/index" hover-class='none'>
     <view hover-class="bg_hover">
       <image src='../../../assets/image/1.png'></image>
       <text>备件查询</text>
     </view>
   </navigator>
-  <navigator url="../../page/3d/index" hover-class='none'>
+  <navigator url="../../page/3d/3d/index" hover-class='none'>
     <view hover-class="bg_hover">
       <image src='../../../assets/image/4.png'></image>
       <text>3D展示</text>
     </view>
   </navigator>
-  <navigator url="../../page/answer_center/index" hover-class='none'>
+  <navigator url="../../page/answer/answer_center/index" hover-class='none'>
     <view hover-class="bg_hover">
       <image src='../../../assets/image/3.png'></image>
       <text>答疑中心</text>

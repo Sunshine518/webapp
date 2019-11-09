@@ -6,17 +6,26 @@
   ],
   "subPackages": [
     {
-      "root": "pages/page/",
+      "root": "pages/page/configuration",
       "pages": [
-      "three/index",
       "configuration_search/index",
       "configuration_detail/index",
-      "configuration_image/index",
-      "answer_center/index",
-      "answer_center_submit/index",
-      "3d/index"
+      "configuration_image/index"
       ]
-    }
+    },
+      {
+        "root": "pages/page/answer",
+        "pages": [
+          "answer_center/index",
+          "answer_center_submit/index"
+        ]
+      },
+      {
+        "root": "pages/page/3d",
+        "pages": [
+          "3d/index"
+        ]
+      }
   ],
   "window": {
     "backgroundTextStyle": "light",

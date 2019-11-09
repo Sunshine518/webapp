@@ -1,9 +1,7 @@
-const utils = require('../../../utils/util.js');
-const json = require('../../../utils/ajax.js')
-const regeneratorRuntime = require('../../../utils/runtime')
-const testData = require('json.js');
-const testData2 = require('json2.js');
-const WxParse = require('../../../wxParse/wxParse.js');
+const utils = require('../../../../utils/util.js');
+const json = require('../../../../utils/ajax.js')
+const regeneratorRuntime = require('../../../../utils/runtime')
+const WxParse = require('../wxParse/wxParse.js');
 
 Page({
 
@@ -149,7 +147,7 @@ Page({
     };
     console.log(utils.objToQuerystring(urlData))
     wx.navigateTo({
-    url: `/pages/page/answer_center_submit/index?${utils.objToQuerystring(urlData)}`
+      url: `/pages/page/answer/answer_center_submit/index?${utils.objToQuerystring(urlData)}`
     });
   },
 })

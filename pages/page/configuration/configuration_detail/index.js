@@ -1,10 +1,10 @@
-const json = require('../../../utils/ajax.js')
-const regeneratorRuntime = require('../../../utils/runtime')
+const json = require('../../../../utils/ajax.js')
+const regeneratorRuntime = require('../../../../utils/runtime')
 const {
   AESEncrypt,
   objToQuerystring,
   objToSearchObj
-} = require('../../../utils/util.js')
+} = require('../../../../utils/util.js')
 
 Page({
 
@@ -92,7 +92,7 @@ Page({
   // 点击图片跳转到图片显示详情
   onGetLevel4() {
     wx.navigateTo({
-      url: `/pages/page/configuration_image/index?catalogId=${this.data.catalogId}&vin=${this.data.vin}`
+      url: `/pages/configuration/page/configuration_image/index?catalogId=${this.data.catalogId}&vin=${this.data.vin}`
     })
   }
 })

@@ -29,7 +29,4 @@ Page({
       url: `/pages/page/configuration_detail/index?carseriesid=${carseriesid}&carseriesname=${carseriesname}`
     })
   }
-
-
-
 })
